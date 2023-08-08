@@ -137,7 +137,7 @@ def update_output_container(selected_statistics,input_year):
                         title= "Monthly Automobile Sales per Year".format(input_year)))
                                 
         # Plot bar chart for average number of vehicles sold during the given year
-        avr_vdata=yearly_data.groupby('Vehicle_Type')['Automobile_Sales'].mean().reset.index()
+        avr_vdata=yearly_data.groupby('Vehicle_Type')['Automobile_Sales'].mean().reset_index()
         Y_chart3 = dcc.Graph( figure=px.bar(avr_vdata, x='Vehicle_Type', y='Automobile_Sales',title='Average Vehicles Sold by Vehicle Type in the year {}'.format(input_year)))
     
         # Total Advertisement Expenditure for each vehicle using pie chart
